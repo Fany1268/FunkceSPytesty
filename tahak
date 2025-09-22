@@ -1,0 +1,87 @@
+========================================
+🚀 Spouštění testů
+----------------------------------------
+
+pip install pytest
+
+pytest                   # spustí všechny testy
+pytest test_soubor.py    # spustí jen konkrétní soubor
+pytest -k "slovo"        # jen testy obsahující 'slovo'
+pytest -v                # podrobnější výstup
+pytest -q                # stručný výstup
+pytest -s                # zobrazí i print() výstupy
+pytest --maxfail=2       # skončí po 2 chybách
+pytest --disable-warnings# skryje varování
+
+========================================
+📝 Struktura testů
+----------------------------------------
+# soubor: test_calc.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+
+----------------------------------------
+✅ assert příklady
+----------------------------------------
+assert x == y
+assert "abc" in text
+assert typ is None
+assert len(pole) == 3
+
+========================================
+📂 Organizace
+----------------------------------------
+- testovací soubory:  test_*.py nebo *_test.py
+- testovací funkce:   začínají na test_
+- testovací třídy:    začínají na Test
+
+========================================
+🧰 Fixtures
+----------------------------------------
+import pytest
+
+@pytest.fixture
+def sample_data():
+    return [1, 2, 3]
+
+def test_len(sample_data):
+    assert len(sample_data) == 3
+
+========================================
+🔁 Parametrizace
+----------------------------------------
+import pytest
+
+@pytest.mark.parametrize("a,b,vysledek", [
+    (2, 3, 5),
+    (10, 5, 15),
+    (-1, 1, 0),
+])
+def test_add(a, b, vysledek):
+    assert a + b == vysledek
+
+========================================
+🏷️ Markery
+----------------------------------------
+@pytest.mark.slow
+def test_slow_case():
+    ...
+
+# Spuštění jen pomalých testů:
+pytest -m slow
+
+========================================
+⏩ Skip & XFail
+----------------------------------------
+import pytest
+
+@pytest.mark.skip(reason="zatím není hotovo")
+def test_skip():
+    assert 1 == 2
+
+@pytest.mark.xfail
+def test_expected_fail():
+    assert 1 == 2

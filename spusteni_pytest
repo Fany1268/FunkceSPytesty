@@ -1,0 +1,11 @@
+pip install pytest
+
+pytest
+
+
+Když chceš skutečné pokrytí (coverage), musíš testy pustit s pluginem:
+
+pip install pytest-cov
+
+pytest --cov=. --cov-report=term-missing
+
