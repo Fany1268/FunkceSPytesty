@@ -1,0 +1,21 @@
+# --- práce s textem (str) ---
+text = "Ahoj"
+upraveny_text = ""
+for znak in text:
+    upraveny_text += znak.lower()  # skládáme řetězec postupně
+print("upravený text:", upraveny_text)
+
+
+# --- práce s čísly (int) ---
+soucet = 0
+cisla = [1, 2, 3]
+for c in cisla:
+    soucet += c  # sčítáme čísla, int nemá append
+print("součet čísel:", soucet)
+
+
+# --- práce se seznamem (list) ---
+slova = []
+for slovo in ["Python", "je", "super"]:
+    slova.append(slovo)  # přidáváme do seznamu jednotlivá slova
+print("seznam slov:", slova)
