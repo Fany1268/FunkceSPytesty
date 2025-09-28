@@ -1,4 +1,4 @@
-from text_funkce import to_lower, delka_textu, spocitej_slova, vrat_suda, pocet_pismen_bez_mezer, vyber_velka_slova
+from text_funkce import to_lower, delka_textu, spocitej_slova, vrat_suda, pocet_pismen_bez_mezer, vyber_velka_slova, nejdelsi_slovo
 
 def test_to_lower():
     assert to_lower("Ahoj") == "ahoj"
@@ -26,4 +26,8 @@ def test_vyber_velka_slova():
     assert vyber_velka_slova("Ahoj jak se máš", 3) == ['Ahoj', 'jak', 'máš']
     assert vyber_velka_slova("", 2) == []
     assert vyber_velka_slova("Ahoj jak se máš", 10) == []
+
+def test_nejdelsi_slovo():
+    assert nejdelsi_slovo("a bb ccc") == "Nejdelší slovo je: ccc a má 3 znaky"
+
 

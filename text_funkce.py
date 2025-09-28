@@ -62,6 +62,12 @@ def pocet_pismen_bez_mezer(text):
 # print(vysledek)
 
 def vyber_velka_slova(text, min_delka_slova):
+    """
+
+    :param text: string
+    :param min_delka_slova: int
+    :return: list
+    """
     vysledek = []
     slova = text.split()
 
@@ -77,6 +83,25 @@ def vyber_velka_slova(text, min_delka_slova):
 # min_delka_slova = int(input("Napiš číslo: "))
 # vypis = vyber_velka_slova(text, min_delka_slova)
 # print(vypis)
+
+def nejdelsi_slovo(text):
+    """
+vrací nejdelší slovo
+    :param text: string
+    :return: string
+    """
+    nejdelsi = ""
+    slova = text.split()
+    for slovo in slova:
+        if len(slovo) > len(nejdelsi):
+            nejdelsi = slovo
+        else:continue
+    return (f"Nejdelší slovo je: {nejdelsi} a má {len(nejdelsi)} znaky")  # tuple s f string: (slovo, délka)
+    # return (nejdelsi, len(nejdelsi))  # tuple: (slovo, délka)
+
+# vysledek = input("Napiš slova")
+# print(nejdelsi_slovo(vysledek))
+
 
 
 
