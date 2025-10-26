@@ -103,7 +103,23 @@ vrací nejdelší slovo
 # print(nejdelsi_slovo(vysledek))
 
 
+def nejmensi_cislo(cisla):
+    """
+vtací nejmenší číslo
+    :param cisla: list
+    :return: int
+    """
+    # hláška ne do konzole ale pro programátora chybového hlášení
+    if not cisla:
+        raise ValueError("Seznam nesmí být prázdný.")
+    nej = cisla[0]            # začneme prvním číslem v seznamu
+    for cislo in cisla:       # projdeme všechna čísla
+        if cislo < nej:       # pokud je aktuální menší než dosavadní minimum
+            nej = cislo       # aktualizujeme nejmenší číslo
+    return nej                # vrátíme výsledek
 
+tisk = nejmensi_cislo([2, 3, 4])
+print(tisk)
 
 
 

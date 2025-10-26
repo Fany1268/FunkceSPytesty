@@ -1,5 +1,5 @@
 import unittest
-from text_funkce import to_lower, delka_textu, spocitej_slova, vrat_suda, pocet_pismen_bez_mezer, vyber_velka_slova, nejdelsi_slovo
+from text_funkce import to_lower, delka_textu, spocitej_slova, vrat_suda, pocet_pismen_bez_mezer, vyber_velka_slova, nejdelsi_slovo, nejmensi_cislo
 
 
 class TestTextFunkce(unittest.TestCase):
@@ -37,6 +37,10 @@ class TestTextFunkce(unittest.TestCase):
 
     def test_nejdelsi_slovo(self):
         self.assertEqual(nejdelsi_slovo("a bb ccc"), "Nejdelší slovo je: ccc a má 3 znaky")
+
+    def test_nejmensi_cislo(self):
+        self.assertEqual(nejmensi_cislo([2, 3, 4]),2)
+        self.assertEqual(nejmensi_cislo([2, -5, 4]), -5)
 
 
 
